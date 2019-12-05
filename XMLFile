@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="XMLFiletoXml.xslt"?>
+
+<produkty> <!--xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns ="zad2"
+          xs:schemaLocation="zad2 XMLFile.xsd"> -->
+
+
+
+    <aktualnosc aktualny="yes"/>
+    <waluta walutaid="pln"/>
+    <waluta walutaid="eur"/>
+    <waluta walutaid="usd"/>
+	<podpis osoba="Blazej">
+        <wiek>22</wiek>
+		<imię>Błażej</imię>
+		<nazwisko>Kobierecki</nazwisko>
+		<index>224331</index>
+	</podpis>
+	<podpis osoba="Milosz">
+        <wiek>20</wiek>
+		<imię>Miłosz</imię>
+		<nazwisko>Turczak</nazwisko>
+		<index>224446</index>
+	</podpis>
+	
+	<sekcja>
+        <nazwa_sekcji>BUTY</nazwa_sekcji>
+    <produkt numer="b1">
+    <producent>Yeezy</producent>
+	<model>350 v2</model>
+	<rozmiar>43</rozmiar>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok aktualny="yes">2019</rok>
+	<cena walutaid="pln" >899</cena>
+    <kolor>czarne</kolor>
+  </produkt>
+  
+    <produkt numer="b2" sale="yes">
+    <producent>Yeezy</producent>
+	<model>500</model>
+	<rozmiar>44</rozmiar>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2018</rok>
+	<cena walutaid="pln">799</cena>
+    <kolor>białe</kolor>
+  </produkt>
+
+    <produkt numer="b3">
+    <producent>Nike</producent>
+	<model>Air Max 1</model>
+	<rozmiar>46</rozmiar>
+	<typ>sportowe</typ>
+    <płeć>męskie</płeć>
+    <rok>2015</rok>
+	<cena walutaid="pln">499</cena>
+    <kolor>białe</kolor>
+  </produkt>
+  
+  <produkt numer="b4">
+    <producent>Nike</producent>
+	<model>air max 90</model>
+	<rozmiar>44</rozmiar>
+	<typ>sportowe</typ>
+    <płeć>męskie</płeć>
+    <rok>2016</rok>
+	<cena walutaid="eur">100</cena>
+    <kolor>czarne</kolor>
+  </produkt>
+  
+<produkt numer="b5">
+    <producent>Air Jordan</producent>
+	<model>4 Retro</model>
+	<rozmiar>43</rozmiar>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2010</rok>
+	<cena walutaid="pln">599</cena>
+    <kolor>biało-czerwone</kolor>
+  </produkt>
+  
+  <produkt numer="b6">
+    <producent>Air Jordan</producent>
+	<model>3 Retro</model>
+	<rozmiar>43</rozmiar>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2016</rok>
+	<cena walutaid="pln">599</cena>
+    <kolor>biało-niebieskie</kolor>
+  </produkt>
+
+
+
+      <nazwa_sekcji>KOSZULKI</nazwa_sekcji>
+  <produkt numer="b7">
+    <producent>Emporio Armani</producent>
+	<model>EA7</model>
+	<rozmiar>M</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2017</rok>
+	<cena walutaid="usd">40</cena>
+    <kolor>biały</kolor>
+  </produkt>
+  
+  <produkt numer="b8">
+    <producent>Hugo Boss</producent>
+	<model>BMG</model>
+	<rozmiar>S</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2017</rok>
+	<cena walutaid="pln">63</cena>
+    <kolor>granatowy</kolor>
+  </produkt>
+  
+  <produkt numer="b9">
+    <producent>Hugo Boss</producent>
+	<model>BMG</model>
+	<rozmiar>M</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2017</rok>
+	<cena walutaid="pln">63</cena>
+    <kolor>szary</kolor>
+  </produkt>
+  
+  <produkt numer="b10" sale="yes">
+    <producent>Hugo Boss</producent>
+	<model>MW14</model>
+	<rozmiar>M</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+    <płeć>męskie</płeć>
+    <rok>2018</rok>
+	<cena walutaid="usd">19</cena>
+    <kolor>niebieski</kolor>
+  </produkt>
+
+
+      <nazwa_sekcji>CZAPKI</nazwa_sekcji>
+  <produkt numer="b11">
+    <producent>Superdry</producent>
+	<model>Premium Good</model>
+	<rozmiar>one size</rozmiar>
+	<typ>casual</typ>
+    <płeć>unisex</płeć>
+    <rok>2016</rok>
+	 <cena walutaid="pln">79</cena>
+    <kolor>czarny</kolor>
+  </produkt>
+  <produkt numer="b12">
+    <producent>New Era</producent>
+	<model>New York Yankees</model>
+	<rozmiar>one size</rozmiar>
+	<typ>casual</typ>
+    <płeć>unisex</płeć>
+    <rok>2017</rok>
+	 <cena walutaid="pln">47</cena>
+    <kolor>czarny</kolor>
+  </produkt>
+
+
+      <nazwa_sekcji>SKARPETY</nazwa_sekcji>
+  <produkt numer="b13">
+    <producent>Many Mornings</producent>
+	<model>Veggie Mix</model>
+	<rozmiar>39-42</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+      <płeć>unisex</płeć>
+      <rok aktualny="yes">2019</rok>
+	<cena walutaid="pln">25</cena>
+    <kolor>zielono-żółty</kolor>
+  </produkt>
+  
+  <produkt numer="b14">
+    <producent>Many Mornings</producent>
+	<model>The Bicycles</model>
+	<rozmiar>43-46</rozmiar>
+	<tkanina>poliester</tkanina>
+	<typ>casual</typ>
+      <płeć>unisex</płeć>
+      <rok>2018</rok>
+	 <cena walutaid="pln">25</cena>
+    <kolor>niebieski</kolor>
+  </produkt>
+  
+  <produkt numer="b15">
+    <producent>Many Mornings</producent>
+	<model>Bananas</model>
+	<rozmiar>43-46</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+      <płeć>unisex</płeć>
+      <rok>2019</rok>
+	 <cena walutaid="pln">25</cena>
+    <kolor>żółty</kolor>
+  </produkt>
+  
+  <produkt numer="b16">
+    <producent>Many Mornings</producent>
+	<model>Honey Bear Kids</model>
+	<rozmiar>27-30</rozmiar>
+	<tkanina>bawełna</tkanina>
+	<typ>casual</typ>
+      <płeć>unisex</płeć>
+      <rok>2019</rok>
+	<cena walutaid="pln">15</cena>
+    <kolor>żółto-pomarańczowy</kolor>
+  </produkt>
+
+
+        <nazwa_sekcji>SPODNIE</nazwa_sekcji>
+    <produkt numer="b17">
+        <producent>Levi's</producent>
+        <model>501</model>
+        <rozmiar>32/34</rozmiar>
+		<tkanina>bawełna</tkanina>
+		<typ>casual</typ>
+        <płeć>męskie</płeć>
+        <rok>2013</rok>
+        <cena walutaid="pln" >359</cena>
+        <kolor>jeans</kolor>
+    </produkt>
+
+    <produkt numer="b18" sale="yes">
+        <producent>Levi's</producent>
+        <model>501</model>
+        <rozmiar>32/32</rozmiar>
+		<tkanina>bawełna</tkanina>
+		<typ>casual</typ>
+        <płeć>męskie</płeć>
+        <rok>2018</rok>
+        <cena walutaid="pln" >359</cena>
+        <kolor>jeans</kolor>
+    </produkt>
+
+    <produkt numer="b19">
+        <producent>Mustang</producent>
+        <model>Michigan Straight</model>
+        <rozmiar>34/36</rozmiar>
+		<tkanina>bawełna</tkanina>
+		<typ>casual</typ>
+        <płeć>męskie</płeć>
+        <rok>2014</rok>
+        <cena walutaid="pln">169</cena>
+        <kolor>jeans</kolor>
+    </produkt>
+
+    <produkt numer="b20">
+        <producent>Wrangler</producent>
+        <model>Greensboro</model>
+        <rozmiar>34/34</rozmiar>
+		<tkanina>bawełna</tkanina>
+		<typ>casual</typ>
+        <płeć>męskie</płeć>
+        <rok>2015</rok>
+        <cena walutaid="eur">49</cena>
+        <kolor>czarny</kolor>
+    </produkt>
+    </sekcja>
+
+</produkty>
