@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsl:stylesheet version="2.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes" />
+
+    <xsl:template match="/">
+    <xsl:element name="shopReport">
+        <xsl:element name="Autorzy">
+            <xsl:for-each select="produkty/podpis">
+            <xsl:element name="Autor">
+                <xsl:attribute name="Imię">
+                    <xsl:choose>
+                        <xsl:when test="(@osoba)='Blazej'">
+                            <xsl:value-of select="imię"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="imię"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+                <xsl:attribute name="Nazwisko">
+                    <xsl:choose>
+                        <xsl:when test="(@osoba)='Blazej'">
+                            <xsl:value-of select="nazwisko"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="nazwisko"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+                <xsl:attribute name="Indeks">
+                    <xsl:choose>
+                        <xsl:when test="(@osoba)='Blazej'">
+                            <xsl:value-of select="index"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="index"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:element>
+            </xsl:for-each>
+        </xsl:element>
+        <xsl:text>Raport Sklepu</xsl:text>
+        <xsl:element name="Lista_Produktow">
+            <xsl:apply-templates select="produkty/sekcja"/>
+        </xsl:element>
+        <xsl:element name="Podsumowanie">
+            <xsl:element name="iloscWalut">
+                <xsl:value-of select="count(//produkty/waluta)"/>
+            </xsl:element>
+            <xsl:element name="ProduktyWaluty">
+                <xsl:element name="iloscPLN">
+                    <xsl:value-of select="count(//produkty/sekcja/produkt/cena[@walutaid = 'pln'])" />
+                </xsl:element>
+                <xsl:element name="iloscEUR">
+                    <xsl:value-of select="count(//produkty/sekcja/produkt/cena[@walutaid = 'eur'])" />
+                </xsl:element>
+                <xsl:element name="iloscUSD">
+                    <xsl:value-of select="count(//produkty/sekcja/produkt/cena[@walutaid = 'usd'])" />
+                </xsl:element>
+            </xsl:element>
+            <xsl:element name="SrednieWalut">
+                <xsl:element name="SredniaPLN">
+                    <xsl:value-of select="sum(//produkty/sekcja/produkt/cena[@walutaid = 'pln']) div count(//produkty/sekcja/produkt/cena[@walutaid = 'pln'])"/>
+                </xsl:element>
+                <xsl:element name="SredniaEUR">
+                    <xsl:value-of select="sum(//produkty/sekcja/produkt/cena[@walutaid = 'eur']) div count(//produkty/sekcja/produkt/cena[@walutaid = 'eur'])"/>
+                </xsl:element>
+                <xsl:element name="SredniaUSD">
+                    <xsl:value-of select="sum(//produkty/sekcja/produkt/cena[@walutaid = 'usd']) div count(//produkty/sekcja/produkt/cena[@walutaid = 'usd'])"/>
+                </xsl:element>
+            </xsl:element>
+            <xsl:element name="Wyprzedaz">
+                <xsl:value-of select="count(//produkty/sekcja/produkt[@sale = 'yes'])" />
+            </xsl:element>
+<!--            <xsl:element name="DataRaport">-->
+<!--                <xsl:value-of select="format-dateTime(current-dateTime(),'[D01]/[M01]/[Y0001]')" />-->
+<!--            </xsl:element>-->
+        </xsl:element>
+    </xsl:element>
+    </xsl:template>
+
+    <xsl:template match="produkty/sekcja">
+        <xsl:for-each select="produkt">
+            <xsl:sort select="cena/@walutaid" data-type="text" order="ascending" />
+            <xsl:sort select="cena" data-type="number" order="descending" />
+                <xsl:element name="Produkt">
+                    <xsl:attribute name="CurrentYear">
+                        <xsl:choose>
+                            <xsl:when test="(rok/@aktualny)='yes'">
+                                <xsl:text>AKTUALNY ROK</xsl:text>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:attribute>
+                    <xsl:attribute name="Size">
+                        <xsl:value-of select="rozmiar"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Type">
+                        <xsl:value-of select="typ"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Sex">
+                        <xsl:value-of select="płeć"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Colour">
+                        <xsl:value-of select="typ"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Year">
+                        <xsl:value-of select="rok"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Model">
+                        <xsl:value-of select="model"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Producent">
+                        <xsl:value-of select="producent"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="PriceCurrency">
+                        <xsl:value-of select="cena/@walutaid"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="Price">
+                        <xsl:value-of select="cena"/>
+                    </xsl:attribute>
+                </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+</xsl:stylesheet>
