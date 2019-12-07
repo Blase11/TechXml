@@ -161,10 +161,10 @@
                 </td>
             </tr>
         </table>
-        <h2>
+        <h2 style="text-align: center" class="center">
             <xsl:value-of select="concat('Ilość produkty na Wyprzedaży: ', Wyprzedaz ,' produkty')"/>
         </h2>
-        <h2>
+        <h2 style="text-align: center" class="center">
             <xsl:value-of select="concat('Ilość produktów z aktualnego roku: ', Aktualny , ' produkty')"/>
         </h2>
     </xsl:template>
