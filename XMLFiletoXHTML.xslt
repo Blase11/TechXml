@@ -9,10 +9,9 @@
             <head>
                 <title>Raport Sklepu</title>
                 <style type="text/css">
-                    <!--body {
-                    background-image: url("background.jpg");
+                    body {
                     background-color: #cccccc;
-                    }-->
+                    }
 
                     table {
                     font-family: 'Century Gothic';
@@ -55,19 +54,18 @@
             </head>
             <body>
                 <h1>Raport Sklepu</h1>
-                    <xsl:apply-templates select="shopReport/Autorzy"/>
+                    <xsl:apply-templates select="shopReport/Autorzy/Autor"/>
                     <xsl:apply-templates select="shopReport/Lista_Produktow"/>
                     <xsl:apply-templates select="shopReport/Podsumowanie"/>
             </body>
         </html>
     </xsl:template>
 
-    <xsl:template match="shopReport/Autorzy">
-        <h2>Autorzy</h2>
-        <h2>
-            <xsl:value-of select="@Imię"/>
-            <xsl:value-of select="@Nazwisko"/>
-            <xsl:value-of select="@Indeks"/>
+    <xsl:template match="shopReport/Autorzy/Autor">
+        <h2>Autor:
+            <xsl:value-of select="concat(' ',@Imię)"/>
+            <xsl:value-of select="concat(' ',@Nazwisko)"/>
+            <xsl:value-of select="concat(' ',@Indeks)"/>
         </h2>
     </xsl:template>
 
@@ -124,7 +122,50 @@
         </table>
     </xsl:template>
 
-
-
-
+    <xsl:template match="shopReport/Podsumowanie">
+        <table style="text-align: center" class="center">
+            <caption>
+                <b>
+                    <br/>Podsumowanie</b>
+            </caption>
+            <tr id="r02">
+                <th>Waluta</th>
+                <th>Ilość Produktów</th>
+                <th>Średni Koszt</th>
+            </tr>
+            <tr style="text-align:left">
+                <td>PLN</td>
+                <td>
+                        <xsl:value-of select="ProduktyWaluty/iloscPLN" />
+                </td>
+                <td>
+                        <xsl:value-of select="SrednieWalut/SredniaPLN"/>
+                </td>
+            </tr>
+            <tr>
+                <td>EUR</td>
+                <td>
+                    <xsl:value-of select="ProduktyWaluty/iloscEUR" />
+                </td>
+                <td>
+                    <xsl:value-of select="SrednieWalut/SredniaEUR"/>
+                </td>
+            </tr>
+            <tr>
+                <td>USD</td>
+                <td>
+                    <xsl:value-of select="ProduktyWaluty/iloscUSD" />
+                </td>
+                <td>
+                    <xsl:value-of select="SrednieWalut/SredniaUSD"/>
+                </td>
+            </tr>
+        </table>
+        <h2>
+            <xsl:value-of select="concat('Ilość produkty na Wyprzedaży: ', Wyprzedaz ,' produkty')"/>
+        </h2>
+        <h2>
+            <xsl:value-of select="concat('Ilość produktów z aktualnego roku: ', Aktualny , ' produkty')"/>
+        </h2>
+    </xsl:template>
 </xsl:stylesheet>
